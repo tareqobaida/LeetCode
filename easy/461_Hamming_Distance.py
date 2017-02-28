@@ -26,10 +26,9 @@ class Solution(object):
         :rtype: int
         """
         xor = x ^ y
-        length = xor.bit_length()
         count = 0
         # note range(3)=[0,1,2]
-        for i in range(length):
+        while(xor):
             if xor & 1:
                 count += 1
             xor = xor >> 1
@@ -38,7 +37,7 @@ class Solution(object):
 
 def test():
     sol = Solution()
-    print(sol.hammingDistance(4, 4))
+    print(sol.hammingDistance(1, 4))
 
 
 test()
